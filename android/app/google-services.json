@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "831830146465",
+    "firebase_url": "https://bawangmerahapp1-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "bawangmerahapp1",
+    "storage_bucket": "bawangmerahapp1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831830146465:android:875ffccaabf1206e175fe0",
+        "android_client_info": {
+          "package_name": "com.example.bawangmerah"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD36DAwZ1TcF-3PVnrnW6PCugLZB1rhkus"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831830146465:android:89fd14ba196ade2f175fe0",
+        "android_client_info": {
+          "package_name": "com.example.bawangmerahapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD36DAwZ1TcF-3PVnrnW6PCugLZB1rhkus"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
