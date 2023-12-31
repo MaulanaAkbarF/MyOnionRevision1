@@ -39,171 +39,170 @@ class PageInformation extends StatelessWidget {
 
           return Scaffold(
             body: SafeArea(
-                child: SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Text(
-                          "INFORMASI KEBUN",
-                          style: GoogleFonts.abel(color: Colors.black, fontSize: 24),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                              color: Colors.grey.shade200,
-                              borderRadius: BorderRadius.circular(20)),
-                          child: Padding(
-                            padding: const EdgeInsets.all(15),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Icon(Icons.location_on),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    Text("Nganjuk", style: TextStyle(fontSize: 20),)
-                                  ],
-                                ),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      "35°C",
-                                      style: GoogleFonts.abel(fontSize: 40),
-                                    ),
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          "Kemarin: 41°C",
-                                          style: GoogleFonts.abel(),
-                                        ),
-                                        Text("Rata-rata: 37°C", style: GoogleFonts.abel())
-                                      ],
-                                    ),
-                                    Image.asset("assets/clouds.png")
-                                  ],
-                                )
-                              ],
-                            ),
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        "INFORMASI KEBUN",
+                        style: GoogleFonts.abel(color: Colors.black, fontSize: 24),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                            color: Colors.grey.shade200,
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Padding(
+                          padding: const EdgeInsets.all(15),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Icon(Icons.location_on),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Text("Nganjuk", style: TextStyle(fontSize: 20),)
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "35°C",
+                                    style: GoogleFonts.abel(fontSize: 40),
+                                  ),
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Kemarin: 41°C",
+                                        style: GoogleFonts.abel(),
+                                      ),
+                                      Text("Rata-rata: 37°C", style: GoogleFonts.abel())
+                                    ],
+                                  ),
+                                  Image.asset("assets/clouds.png")
+                                ],
+                              )
+                            ],
                           ),
                         ),
-                        boxInformation(
-                          title: "Kecerahan",
-                          titleValue: "${data['kecerahan']}",
-                          condition: "",
-                          informationTitle: "Pukul 17:00 s/d 18:00, Lampu Hidup",
-                          onIconButtonPressed: () {
-                            PersistentNavBarNavigator.pushNewScreenWithRouteSettings(
-                              context,
-                              //argument dobawah ni bos
-                              settings: RouteSettings(name: DetailKecerahan.routeName),
-                              screen: const DetailKecerahan(),
-                              withNavBar: true,
-                              pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                            );
-                          },
-                        ),
-                        boxInformation(
-                          title: "pH Tanah",
-                          titleValue: "${data['phair']}",
-                          condition: "",
-                          informationTitle: "pH Netral: 5,6-7",
-                          onIconButtonPressed: () {
-                            PersistentNavBarNavigator.pushNewScreenWithRouteSettings(
-                              context,
-                              //argument dobawah ni bos
-                              settings: RouteSettings(name: DetailPhAir.routeName),
-                              screen: const DetailPhAir(),
-                              withNavBar: true,
-                              pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                            );
-                          },
-                        ),
-                        boxInformation(
-                          title: "Kelembaban Udara",
-                          titleValue: "${data['kelembaban']}%",
-                          condition: "",
-                          informationTitle: "Kelembaban udara",
-                          value: "Netral : 50%-70%",
-                          onIconButtonPressed: () {
-                            PersistentNavBarNavigator.pushNewScreenWithRouteSettings(
-                              context,
-                              //argument dobawah ni bos
-                              settings: RouteSettings(name: DetailKelembapan.routeName),
-                              screen: const DetailKelembapan(),
-                              withNavBar: true,
-                              pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                            );
-                          },
-                        ),
-                        boxInformation(
-                          title: "Kelembaban Tanah",
-                          titleValue: "${data['kelembabantanah']}%",
-                          condition: "",
-                          informationTitle: "Kelembaban tanah",
-                          value: "Netral : 50%-65%",
-                          onIconButtonPressed: () {
-                            PersistentNavBarNavigator.pushNewScreenWithRouteSettings(
-                              context,
-                              //argument dobawah ni bos
-                              settings: RouteSettings(name: DetailKelembapanTanah.routeName),
-                              screen: const DetailKelembapanTanah(),
-                              withNavBar: true,
-                              pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                            );
-                          },
-                        ),
-                        boxInformation(
-                          title: "Suhu Udara",
-                          titleValue: "${data['suhu']}%",
-                          condition: "",
-                          informationTitle: "Suhu Udara",
-                          value: "Normal : 25°C-36°C",
-                          onIconButtonPressed: () {
-                            PersistentNavBarNavigator.pushNewScreenWithRouteSettings(
-                              context,
-                              //argument dobawah ni bos
-                              settings: RouteSettings(name: DetailSuhuUdara.routeName),
-                              screen: const DetailSuhuUdara(),
-                              withNavBar: true,
-                              pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                            );
-                          },
-                        ),
-                        boxInformation(
-                          title: "Ketinggian Air",
-                          titleValue: "${data['ketinggianair']}",
-                          condition: "",
-                          informationTitle: "Ketinggian Air Normal : 50-60 Cm",
-                          onIconButtonPressed: () {
-                            PersistentNavBarNavigator.pushNewScreenWithRouteSettings(
-                              context,
-                              //argument dobawah ni bos
-                              settings: RouteSettings(name: DetailTinggirAir.routeName),
-                              screen: const DetailTinggirAir(),
-                              withNavBar: true,
-                              pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                            );
-                          },
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                      ],
-                    ),
+                      ),
+                      boxInformation(
+                        title: "Kecerahan",
+                        titleValue: "${data['kecerahan']}",
+                        condition: "",
+                        informationTitle: "Pukul 17:00 s/d 18:00, Lampu Hidup",
+                        onIconButtonPressed: () {
+                          PersistentNavBarNavigator.pushNewScreenWithRouteSettings(
+                            context,
+                            //argument dobawah ni bos
+                            settings: RouteSettings(name: DetailKecerahan.routeName),
+                            screen: const DetailKecerahan(),
+                            withNavBar: true,
+                            pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                          );
+                        },
+                      ),
+                      boxInformation(
+                        title: "pH Tanah",
+                        titleValue: "${data['phair']}",
+                        condition: "",
+                        informationTitle: "pH Netral: 5,6-7",
+                        onIconButtonPressed: () {
+                          PersistentNavBarNavigator.pushNewScreenWithRouteSettings(
+                            context,
+                            //argument dobawah ni bos
+                            settings: RouteSettings(name: DetailPhAir.routeName),
+                            screen: const DetailPhAir(),
+                            withNavBar: true,
+                            pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                          );
+                        },
+                      ),
+                      boxInformation(
+                        title: "Kelembaban Udara",
+                        titleValue: "${data['kelembaban']}%",
+                        condition: "",
+                        informationTitle: "Kelembaban udara",
+                        value: "Netral : 50%-70%",
+                        onIconButtonPressed: () {
+                          PersistentNavBarNavigator.pushNewScreenWithRouteSettings(
+                            context,
+                            //argument dobawah ni bos
+                            settings: RouteSettings(name: DetailKelembapan.routeName),
+                            screen: const DetailKelembapan(),
+                            withNavBar: true,
+                            pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                          );
+                        },
+                      ),
+                      boxInformation(
+                        title: "Kelembaban Tanah",
+                        titleValue: "${data['kelembabantanah']}%",
+                        condition: "",
+                        informationTitle: "Kelembaban tanah",
+                        value: "Netral : 50%-65%",
+                        onIconButtonPressed: () {
+                          PersistentNavBarNavigator.pushNewScreenWithRouteSettings(
+                            context,
+                            //argument dobawah ni bos
+                            settings: RouteSettings(name: DetailKelembapanTanah.routeName),
+                            screen: const DetailKelembapanTanah(),
+                            withNavBar: true,
+                            pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                          );
+                        },
+                      ),
+                      boxInformation(
+                        title: "Suhu Udara",
+                        titleValue: "${data['suhu']}%",
+                        condition: "",
+                        informationTitle: "Suhu Udara",
+                        value: "Normal : 25°C-36°C",
+                        onIconButtonPressed: () {
+                          PersistentNavBarNavigator.pushNewScreenWithRouteSettings(
+                            context,
+                            //argument dobawah ni bos
+                            settings: RouteSettings(name: DetailSuhuUdara.routeName),
+                            screen: const DetailSuhuUdara(),
+                            withNavBar: true,
+                            pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                          );
+                        },
+                      ),
+                      boxInformation(
+                        title: "Ketinggian Air",
+                        titleValue: "${data['ketinggianair']}",
+                        condition: "",
+                        informationTitle: "Ketinggian Air Normal : 50-60 Cm",
+                        onIconButtonPressed: () {
+                          PersistentNavBarNavigator.pushNewScreenWithRouteSettings(
+                            context,
+                            settings: RouteSettings(name: DetailTinggirAir.routeName),
+                            screen: const DetailTinggirAir(),
+                            withNavBar: true,
+                            pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                          );
+                        },
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                    ],
                   ),
-                )),
+                ),
+              )),
           );
         }
     );
